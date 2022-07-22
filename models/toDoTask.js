@@ -17,10 +17,3 @@ const toDoTaskSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('toDoTasks', toDoTaskSchema,'toDoList')
-
-
-
-// document.getElementsByClassName('todo-header').addEventListener('click',addTask)
-// function addTask(){
-//     console.log('itworks')
-// }
