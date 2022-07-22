@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do list!</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- Google font if I dare -->
+    <!-- Icons -->
+    <!-- Font awesome uses a lot of icons that are very helpful in setting up things like the edit and delete button. -->
+</head>
+<body>
+    <section class="todo-container">
+        <h2>To Do List</h2>
+        <section class = 'todo'>
+            <form action="/" method="POST" class = 'todo-header'>
+                <input type="text" name ='title' value = 'Put your title here!'>
+                <textarea rows="6" cols="45" name="content" value = 'content'>Need some details?</textarea>
+                <button type="submit">Add Task</button>
+            </form>
+            <ul class="todo-list">
+                <% toDoTasks.forEach(task =>{%>
+                  <li class = "todo-list-item">
+                      <div class="todo-list-item-title">
+                          <%= task.title %>
+                      </div>
+                      <div class="todo-list-item-content">
+                        <%= task.content %>
+                    </div>
+                      <a href="/edit/<%=task._id %>" class="edit">Edit Task</a>
+                      <a href="/remove/<%=task._id %>" class="edit">Delete Task</a>
+                  </li>  
+                <% }) %>
+            </ul>
+        </section>
+    </section>
+    <section class="tasksGoesHere"></section>
+
+</body>
+</html>
